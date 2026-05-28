@@ -6,6 +6,7 @@ public class ContaCorrente extends ContaBancaria{
 
     @Override
     public void Sacar(){
+        this.taxa = 5;
         String saque = JOptionPane.showInputDialog(
                 null,
                 "Digite O valor do Saque(R$ 5,00 reais de Taxa)",
@@ -13,8 +14,8 @@ public class ContaCorrente extends ContaBancaria{
                 JOptionPane.QUESTION_MESSAGE
         );
 
-        double valor = Double.parseDouble(saque);
+        this.valor = Double.parseDouble(saque);
 
-        this.saldo = saldo - (valor - 5);
+        this.saldo = saldo - (valor + taxa);
     }
 }

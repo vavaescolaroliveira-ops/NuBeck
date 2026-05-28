@@ -9,76 +9,35 @@ import javax.swing.*;
 
 public class Main {
     static void main(String[] args) {
-        String resposta = JOptionPane.showInputDialog(
-                null,
-                "Digite a Opção"+"\n1 - Criar Conta\n2 - Sair",
-                "Opção",
-                JOptionPane.QUESTION_MESSAGE
-        );
+        ContaBancaria c1 = new ContaCorrente();
+        ContaBancaria c2 = new ContaPoupanca();
+        ContaBancaria c3 = new ContaSalario();
 
-        int op = Integer.parseInt(resposta);
+        c1.setTitular("Corrente");
+        c1.setNumeroDaConta(1);
+        c1.setSaldo(1000);
+        c1.ImprimirConta();
+        c1.Sacar();
+        c1.Depositar();
+        c1.ImprimirConta();
 
-        while(op != 2){
-            String tipoConta = JOptionPane.showInputDialog(
-                    null,
-                    "Digite o Tipo\n1 - Corrente\n2 - Poupança\n3 - Salario",
-                    "Conta",
-                    JOptionPane.QUESTION_MESSAGE
-            );
+        c2.setTitular("Poupança");
+        c2.setSaldo(1000);
+        c2.ImprimirConta();
+        c2.Sacar();
+        c2.Depositar();
+        c2.ImprimirConta();
 
-            int contaOp = Integer.parseInt(tipoConta);
-
-            if (contaOp == 1){
-                ContaBancaria c = new ContaCorrente();
-                c.setTitular(
-                        JOptionPane.showInputDialog(
-                        null,
-                        "Digite o Nome",
-                        "Nome",
-                        JOptionPane.QUESTION_MESSAGE
-                ));
-
+        c3.setTitular("Salario");
+        c3.setSaldo(1000);
+        c3.ImprimirConta();
+        c3.Sacar();
+        c3.Depositar();
+        c3.ImprimirConta();
+        c3.Sacar();
+        c3.ImprimirConta();
 
 
 
-            }else if (contaOp == 2){
-                ContaBancaria c = new ContaPoupanca();
-                c.setTitular(
-                        JOptionPane.showInputDialog(
-                                null,
-                                "Digite o Nome",
-                                "Nome",
-                                JOptionPane.QUESTION_MESSAGE
-                        ));
-
-            }else if (contaOp == 3){
-                ContaBancaria c = new ContaSalario();
-                c.setTitular(
-                        JOptionPane.showInputDialog(
-                                null,
-                                "Digite o Nome",
-                                "Nome",
-                                JOptionPane.QUESTION_MESSAGE
-                        ));
-
-            }
-
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Conta Criada",
-                    "Mensagem",
-                    JOptionPane.INFORMATION_MESSAGE
-            );
-
-            String acao = JOptionPane.showInputDialog(
-                    null,
-                    "Digite a Ação\n1 - Depositar\n2 - Sacar\n3 - Ver Saldo",
-                    "Conta",
-                    JOptionPane.QUESTION_MESSAGE
-            );
-
-            int acaoOp = Integer.parseInt(tipoConta);
-
-        }
     }
 }
