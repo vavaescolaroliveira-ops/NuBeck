@@ -25,7 +25,6 @@ public class ContaBancaria {
 
         this.saldo = saldo - valor;
 
-        ImprimirConta();
     }
 
 
@@ -45,7 +44,9 @@ public class ContaBancaria {
     public void ImprimirConta(){
         JOptionPane.showMessageDialog(
                 null,
-                "Conta: "+getTitular()+"\nSaldo Inicial: "+getSaldoInicial()+"\n\n\nSaque Realizado: "+valor+"\nTaxa Aplicada: "+taxa+"\nDepositos: "+valorDeposito+"\n\n\nSaldo Final: "+getSaldo()
+                "Conta: "+getTitular()+"\nSaldo Inicial: "+getSaldoInicial()+"\n\n\nSaque Realizado: "+valor+"\nTaxa Aplicada: "+taxa+"\nDepositos: "+valorDeposito+"\n\n\nSaldo Final: "+getSaldo(),
+                "Conta",
+                JOptionPane.INFORMATION_MESSAGE
         );
     }
 
